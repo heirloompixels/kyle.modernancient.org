@@ -2,7 +2,7 @@
 layout: summer2017
 ---
 
-<div id="cv" class="grid-container grid-container-padded">
+<div id="cv" class="grid-container grid-container-padded" markdown="1">
 <div class="grid-x grid-margin-x margin-vertical-3">
 <div class="cell medium-8 medium-offset-2">
 <img class="radius margin-vertical-1" src="/grfx/me.jpg" />
