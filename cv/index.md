@@ -4,7 +4,9 @@ layout: cv
 
 <img class="radius margin-vertical-1" src="/grfx/me.jpg" />
 
+
 #Kyle Cunningham
+
 
 On a singular canvas, Kyle Cunningham frames the world as he sees it today, as it was yesterday, and as it could be tomorrow, merging almost cavelike images with the technologies of the future. Each piece is unique and poignant: paying homage to our pre-history while forcing us to examine how far we have come. Still life paintings raise the authority of the simple, mundane objects whose presence infuses our being, consciously or not. Dinosaurs with agua-lungs, elephants in space suits, whimsical perhaps, but each has been a part of our history or sits on the arc of the future. In the repetition of the random is found the building blocks of our psyches; each painting is real and resonates with familiarity. He reminds us that though the day is long we are each but a piece of this being known as existence: complex and sublime.
 
@@ -51,6 +53,7 @@ Kyle was raised in Montana but now lives with his partner Jeannie Ortiz on the b
 
 ##Major Bodies of Work
 
+
 ### Raindances
 
 *   2010-2016, Oil on panel or canvas.
@@ -72,11 +75,8 @@ Kyle was raised in Montana but now lives with his partner Jeannie Ortiz on the b
 *   2017-Present, Sterling silver, gold & antique trade beads.
 *   Amulets, talismans and adornment, in collaboration with Jeannie Ortiz.
 
+
 ### Conversations with Stone
 
 *   2018-Present, Marble, limestone, sandstone & tuff.
 *   The cutting, carving or otherwise shaping of stone into both abstract and figurative works.
-
-</div>
-</div>
-</div>
