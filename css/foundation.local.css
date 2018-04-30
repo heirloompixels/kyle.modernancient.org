@@ -3,6 +3,7 @@
   }
 #cv ul li{
   list-style-type: none; 
+  padding: .3em 0; 
   }
   
 .grid-container h1 { 
