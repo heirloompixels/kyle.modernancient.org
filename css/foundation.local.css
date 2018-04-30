@@ -1,7 +1,7 @@
 #cv h3 {
   text-decoration: underline; 
   }
-#cv ul {
+#cv ul li{
   list-style-type: none; 
   }
   
