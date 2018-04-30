@@ -1,5 +1,5 @@
 ---
-layout: summer2017
+layout: cv
 ---
 
 <img class="radius margin-vertical-1" src="/grfx/me.jpg" />
