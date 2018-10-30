@@ -1,0 +1,33 @@
+---
+layout: oeuvre 
+title:  
+categories:
+tags:  
+thumbnail: 
+image: 
+---
+<h2>2018</h2> 
+{% for page in site.pages %} 
+  {% if page.categories contains '2018' %} 
+    <div class="item"> 
+      <p><a href="{{page.url}}">{{page.title}}</a></p>   
+    </div> 
+  {% endif %} 
+{% endfor %}
+
+<article id="artwork">
+	<div class="grid-container grid-container-padded">
+	  <div class="grid-x grid-margin-x margin-vertical-3">
+      <div class="caption cell  medium-4">
+  	    <h1>Eleven PM</h1>
+        <p>Oil on Linen <br/>
+        11 x 14 inches<br/>
+	      Spring 2018</p>
+      </div>
+      <div class="cell medium-8">
+        <img class="radius" src="eleven_pm_1200px.jpg"/>
+      </div>
+    </div>
+  </div>
+</article>
+

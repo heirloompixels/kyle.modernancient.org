@@ -1,0 +1,16 @@
+---
+layout: oeuvre 
+title:  
+categories:
+tags:  
+thumbnail: 
+image: 
+---
+<h2>2017</h2> 
+{% for page in site.pages %} 
+  {% if page.categories contains '2017' %} 
+    <div class="item"> 
+      <p><a href="{{page.url}}">{{page.title}}</a></p>   
+    </div> 
+  {% endif %} 
+{% endfor %}
