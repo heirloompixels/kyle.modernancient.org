@@ -1,32 +1,51 @@
 ---
 layout: oeuvre 
-title:  
-categories:
+title:   
+categories: 
 tags:  
 thumbnail: 
 image: 
 ---
-<h2>2018</h2> 
-{% for page in site.pages %} 
-  {% if page.categories contains '2018' %} 
-    <div class="item"> 
-      <p><a href="{{page.url}}">{{page.title}}</a></p>   
-    </div> 
-  {% endif %} 
-{% endfor %}
-
 <article id="artwork">
 	<div class="grid-container grid-container-padded">
 	  <div class="grid-x grid-margin-x margin-vertical-3">
-      <div class="caption cell  medium-4">
-  	    <h1>Eleven PM</h1>
-        <p>Oil on Linen <br/>
-        11 x 14 inches<br/>
-	      Spring 2018</p>
+      <div class="cell medium-12">
+              <h1>2018 Oeuvre</h1>
+<ol class="oeuvre_year">
+{% for artwork in site.pages %} 
+  {% if artwork.categories contains '2018' %} 
+    
+<li class="item"> 
+  {% if artwork.art_name == page.art_name %} 
+        <a class="current_item" href="{{artwork.url}}">{{artwork.title}}</a> 
+ {%else %}
+        <a href="{{artwork.url}}">{{artwork.title}}</a> 
+ {% endif %}
+  
+      {% if artwrok.thumb_square  %}
+        <img src="/oeuvre/{{artwork.year}}/{{artwork.art_name}}/{{artwork.thumb_square}}"/>
+      {% endif %}
+    </li> 
+  {% endif %} 
+{% endfor %}
+</ol>
+
+
       </div>
-      <div class="cell medium-8">
-        <img class="radius" src="eleven_pm_1200px.jpg"/>
+ 
+      <div class="cell medium-12">
+{% for page in site.pages %} 
+  {% if page.categories contains '2018' %} 
+    <div class="clearfix"> 
+       <a style="float:left;"  href="{{page.url}}">
+          <img src="/oeuvre/{{page.year}}/{{page.art_name}}/{{page.thumb_square}}"/>
+        </a>
+    </div> 
+  {% endif %} 
+{% endfor %}
       </div>
+
+
     </div>
   </div>
 </article>

@@ -1,7 +1,7 @@
 ---
 layout: oeuvre 
-title: Temp  
-categories: paintings 2016 ouevre
+title:   
+categories: 
 tags:  
 thumbnail: 
 image: 
@@ -10,14 +10,41 @@ image:
 	<div class="grid-container grid-container-padded">
 	  <div class="grid-x grid-margin-x margin-vertical-3">
       <div class="cell medium-12">
-        <img class="radius" src="blue_corn-1000.jpg"/>
+              <h1>2016 Oeuvre</h1>
+<ol class="oeuvre_year">
+{% for artwork in site.pages %} 
+  {% if artwork.categories contains '2016' %} 
+    
+<li class="item"> 
+  {% if artwork.art_name == page.art_name %} 
+        <a class="current_item" href="{{artwork.url}}">{{artwork.title}}</a> 
+ {%else %}
+        <a href="{{artwork.url}}">{{artwork.title}}</a> 
+ {% endif %}
+  
+      {% if artwrok.thumb_square  %}
+        <img src="/oeuvre/{{artwork.year}}/{{artwork.art_name}}/{{artwork.thumb_square}}"/>
+      {% endif %}
+    </li> 
+  {% endif %} 
+{% endfor %}
+</ol>
+
+
       </div>
-      <div class="caption cell  medium-offset-8 medium-4">
-  	    <h1>Blue Corn</h1>
-        <p>Oil on Diabond <br/>
-        11 x 14 inches<br/>
-	      Spring 2016</p>
+ 
+      <div class="cell medium-12">
+{% for page in site.pages %} 
+  {% if page.categories contains '2016' %} 
+    <div class="clearfix"> 
+       <a style="float:left;"  href="{{page.url}}">
+          <img src="/oeuvre/{{page.year}}/{{page.art_name}}/{{page.thumb_square}}"/>
+        </a>
+    </div> 
+  {% endif %} 
+{% endfor %}
       </div>
+
 
     </div>
   </div>
