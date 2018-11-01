@@ -6,3 +6,5 @@ Gemfile
 Gemfile.lock
 attic
 oeuvre/*/*/*.png
+oeuvre/*/*/*/*.png
+
