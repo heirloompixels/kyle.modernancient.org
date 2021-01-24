@@ -1,0 +1,188 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+<style>
+  p { 
+    margin: 0; 
+    line-height: 4vw;
+    font-size: 4.96vw;
+    text-transform: uppercase;
+    font-family: Andale Mono; 
+    padding: 1.5vh 0 1.5vh 1.1vw;
+  }
+  #past, .todo,  .future {
+          color: #d9d7d7;
+  }
+.synops,.numbering {
+    font-size: 2vw;
+    line-height: 2vw;
+    display: flex;
+    flex-direction: column;
+}
+  .numbering {
+          text-align: right; 
+          padding: 0 2vw 0 0;
+  }
+
+  .synops {
+          width: 40%; 
+          padding: 0 0 0 2vh; 
+          color: #A9A9A9; 
+  }
+  .folio, .release_date, .current {
+          display: flex; 
+          color: #A9A9A9;
+  }
+  body{ background: white; color: #010D00;  }
+
+  a { 
+          text-decoration: none; 
+          color: #010D00;
+  }
+  a:link, a:visited { }
+  a:hover p, a:hover a, a:hover .folio { background: #010D00; color: white; }
+  a:active {} 
+
+
+  .list { color: #010D00; }
+  .todo { color: #d9d7d7; }
+  #next p { color: #96D2D9; }
+
+  .no-winter { color: #03738C; }
+  .no-spring { color: #BFAB49; }
+  .no-summer { color: #77A612; }
+  .no-fall { color: #D97C2B; }
+
+  a.current span.synops {
+          color: #010D00;
+  }
+  a.current a  {
+          color: #010D00;
+  }
+  a:hover span.synops {
+          color: white; 
+  }
+  
+
+  #current {
+          background: #D9D7D7;
+          background: #BFAB49;
+          background: white;
+  }
+  .current { 
+         color: black;  
+  }
+  .active { 
+         color: black;  
+  }
+
+  #special {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+  color: transparent;
+}
+</style>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function () {
+    // Handler for .ready() called.
+    $('html, body').animate({
+        scrollTop: $('#current').offset().top - $( window ).height() /3 
+    }, 'slow');
+});
+
+</script>
+</head>
+
+<body>
+
+<div id="past">
+
+        {% assign current_year = 2021 %}
+        {% assign start_year = 1983 %}
+        {% assign season_counter = 0 %}
+        {% for y in (start_year..current_year) %}
+        {% assign  seasons_by_year = site.pages | where: "year", y %}
+
+        {% assign seasons = "Winter, Spring, Summer, Autumn" | split: ", " %}
+        {% for s in seasons %}
+          {% assign season =   seasons_by_year | where: "season", s | first %}
+        
+        {% if season %}
+        <a href="{{season.url}}"><p class="active folio winter">>&nbsp;<span class="numbering"><span>#</span>{% increment season_count %}</span>  {{ s }} {{  y }}<span class="synops">{{ season.title }}</span></p></a> 
+        {% else %}
+        <a href="#"><p class="folio winter">>&nbsp;<span class="numbering"><span>#</span>{% increment season_count %}</span>  {{ s }} {{ y }}<span class="synops"></span></p></a> 
+
+        {% endif %}
+
+        {% endfor %}
+
+
+        
+        {% endfor %}
+
+  </div>
+
+  {{ content }}
+
+<div id="future">
+
+        {% assign next_year = 2022 %}
+        {% assign 100th_year = 2083 %}
+        {% for y in (next_year..100th_year) %}
+        {% assign  seasons_by_year = site.pages | where: "year", y %}
+
+        {% assign seasons = "Winter, Spring, Summer, Autumn" | split: ", " %}
+        {% for s in seasons %}
+          {% assign season =   seasons_by_year | where: "season", s | first %}
+        
+        {% if season %}
+        <a href="{{season.url}}"><p class="active folio winter">>&nbsp;<span class="numbering"><span>#</span>{% increment season_count %}</span>  {{ s }} {{  y }}<span class="synops">{{ season.title }}</span></p></a> 
+        {% else %}
+        <a href="#"><p class="folio winter">>&nbsp;<span class="numbering"><span>#</span>{% increment season_count %}</span>  {{ s }} {{ y }}<span class="synops"></span></p></a> 
+
+        {% endif %}
+
+        {% endfor %}
+
+
+        
+        {% endfor %}
+
+  </div>
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>
+
